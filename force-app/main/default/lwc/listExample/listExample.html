@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="List Example">
+        <ul class="slds-m-around_medium">
+            <template iterator:it={contacts}>
+                <li key={it.value.id}>
+                    <div if:true={it.first} class="it-first"></div>
+                    {it.value.name},{it.value.address}
+                    <div if:true={it.last} class="it-last"></div>
+                </li>
+
+            </template>
+     
+     
+     
+            <!--
+        expample of for:each     
+            
+        <template for:each={contacts} for:item="contact">
+                <li key={contact.id}>
+                    {contact.name},
+                    {contact.address}
+                </li>
+            </template>
+        -->
+
+     
+
+        </ul>
+    </lightning-card>
+</template>

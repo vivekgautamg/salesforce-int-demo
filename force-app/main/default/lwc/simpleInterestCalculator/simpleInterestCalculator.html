@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Simple Interest">
+        <div class="slds-m-around_medium">
+         <template if:false={calculate}> 
+            <lightning-input label="Principle value" value={principle} onchange={principleHandler} type="number"></lightning-input>
+                <lightning-input label="Rate of interest" value={interest} onchange={interestHandler} type="number"></lightning-input>
+                <lightning-input label="time" value={time} onchange={timeHandler} type="number"></lightning-input>
+                <lightning-button label="Calculate SI" onclick={calculateSIHandler}></lightning-button>
+                
+            </template>
+
+            <template if:true={calculate}> 
+                <lightning-formatted-text value={result}></lightning-formatted-text>
+                <lightning-button label="reset" icon-position="center" onclick={resetHandler}></lightning-button>
+                </template>
+        
+            </div>
+    </lightning-card>
+
+</template>
